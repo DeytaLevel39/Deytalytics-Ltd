@@ -1,0 +1,17 @@
+attrs==20.3.0
+certifi==2020.12.5
+chardet==4.0.0
+dnspython==2.1.0
+fastapi==0.63.0
+genson==1.2.2
+idna==2.10
+jsonschema==3.2.0
+pydantic==1.8.1
+pymongo==3.11.3
+pyrsistent==0.17.3
+requests==2.25.1
+schemabuilder==0.3.0
+six==1.15.0
+starlette==0.13.6
+typing-extensions==3.7.4.3
+urllib3==1.26.4
