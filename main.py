@@ -10,7 +10,6 @@ app = FastAPI()
 
 def mongo_cnt(password, myFirstDatabase):
     mongo_cntstr = "mongodb+srv://admin:"+password+"@cluster0.jbbpl.mongodb.net/"+myFirstDatabase+"?retryWrites=true&w=majority"
-    print(mongo_cntstr)
     client = pymongo.MongoClient(mongo_cntstr)
     db = client.test
     return db
@@ -38,8 +37,7 @@ def fetch_ob_urls():
 
     return (urls)
 
-#Ok connect to our mongodb Atlas cluster
-db = mongo_cnt("openbanking", "businesscard")
+
 
 
 # Data models
@@ -62,7 +60,7 @@ class location_info (BaseModel):
 class business_card(BaseModel):
     firstname: str
     lastname: str
-    title: str
+    jobtitle: str
     mobile: str
     linkedin: HttpUrl
     location: location_info
@@ -73,22 +71,10 @@ async def root():
 
 @app.get("/businesscard", response_model=business_card)
 def businesscard():
-    bcard_json = {
- "firstname": "James",
- "lastname": "Dey",
- "title": "Data Architect",
- "mobile": "+447941252447",
- "linkedin": "https://www.linkedin.com/in/dataarchitectlondon/",
- "location": {
-	        "city": "London",
-	        "country": "United Kingdom",
-                       "ISOCountryCode":"GBR",
-                       "GeoLocation": {
-			       "GeographicCoordinates": {
-				"latitude": "51.4224864",
-				"longitude": "-0.1884645"
-			                   }
-		                     }
-	         }
-}
+    coll = db['businesscards']
+    bcard_json = coll.find_one()
+    print(bcard_json)
     return bcard_json
+
+#Ok connect to our mongodb Atlas cluster
+db = mongo_cnt("openbanking", "businesscard")
