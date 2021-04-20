@@ -80,15 +80,15 @@ async def root():
 def businesscard(fname, lname):
     coll = db['businesscards']
     bcard_json = coll.find_one({"firstname":fname,"lastname":lname})
-    print(bcard_json)
     return bcard_json
 
 @app.post("/", response_description="Business card added in to the database")
 async def add_bizcard(bizcard_data: business_card = Body(...)):
-    print(jsonable_encoder(bizcard_data))
     coll = db['businesscards']
     bizcard = coll.insert_one(jsonable_encoder(bizcard_data))
-    return ResponseModel(bizcard_data,"Business card added successfully")
+    new_bizcard = coll.find_one(bizcard.inserted_id,{"_id":0})
+    new_bizcard["_id"]=str(bizcard.inserted_id)
+    return (ResponseModel(new_bizcard,"Business card added successfully"))
 
 #Ok connect to our mongodb Atlas cluster
 db = mongo_cnt("openbanking", "businesscard")
