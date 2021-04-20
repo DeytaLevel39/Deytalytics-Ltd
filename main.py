@@ -1,5 +1,6 @@
 from typing import Optional,List
-from fastapi import FastAPI
+from fastapi import FastAPI, Body
+from fastapi.encoders import jsonable_encoder
 import requests, json
 from pydantic import BaseModel, HttpUrl, constr, confloat
 from genson import SchemaBuilder
@@ -38,6 +39,12 @@ def fetch_ob_urls():
     return (urls)
 
 
+def ResponseModel(data, message):
+    return {
+        "data": [data],
+        "code": 200,
+        "message": message,
+    }
 
 
 # Data models
@@ -70,11 +77,18 @@ async def root():
     return {"message": "Hey there, this isn't the business card. Try putting /businesscard at the end of your request URL"}
 
 @app.get("/businesscard", response_model=business_card)
-def businesscard():
+def businesscard(fname, lname):
     coll = db['businesscards']
-    bcard_json = coll.find_one()
+    bcard_json = coll.find_one({"firstname":fname,"lastname":lname})
     print(bcard_json)
     return bcard_json
+
+@app.post("/", response_description="Business card added in to the database")
+async def add_bizcard(bizcard_data: business_card = Body(...)):
+    print(jsonable_encoder(bizcard_data))
+    coll = db['businesscards']
+    bizcard = coll.insert_one(jsonable_encoder(bizcard_data))
+    return ResponseModel(bizcard_data,"Business card added successfully")
 
 #Ok connect to our mongodb Atlas cluster
 db = mongo_cnt("openbanking", "businesscard")
