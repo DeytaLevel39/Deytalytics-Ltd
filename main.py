@@ -48,6 +48,8 @@ def ResponseModel(data, message):
         "message": message,
     }
 
+def ErrorResponseModel(error, code, message):
+    return {"error": error, "code": code, "message": message}
 
 # Data models
 class msg(BaseModel):
@@ -67,6 +69,14 @@ class location_info (BaseModel):
     GeoLocation: geolocation
 
 class business_card(BaseModel):
+    firstname: str
+    lastname: str
+    jobtitle: str
+    mobile: str
+    linkedin: HttpUrl
+    location: location_info
+
+class business_card_with_id(BaseModel):
     id: str
     firstname: str
     lastname: str
@@ -79,12 +89,11 @@ class business_card(BaseModel):
 async def root():
     return {"message": "Hey there, this isn't the business card. Try putting /businesscard at the end of your request URL"}
 
-@app.get("/businesscard", response_model=business_card)
+@app.get("/businesscard", response_model=business_card_with_id)
 def businesscard(fname, lname):
     coll = db['businesscards']
     bcard_json = coll.find_one({"firstname":fname,"lastname":lname})
-    bcard_json["id"] = str(bcard_json["_id"])
-    print(bcard_json)
+    if bcard_json: bcard_json["id"] = str(bcard_json["_id"])
     return bcard_json
 
 @app.post("/", response_description="Business card added in to the database")
@@ -92,8 +101,26 @@ async def add_bizcard(bizcard_data: business_card = Body(...)):
     coll = db['businesscards']
     bizcard = coll.insert_one(jsonable_encoder(bizcard_data))
     new_bizcard = coll.find_one(bizcard.inserted_id,{"_id":0})
-    new_bizcard["_id"]=str(bizcard.inserted_id)
+    new_bizcard["id"]=str(bizcard.inserted_id)
     return (ResponseModel(new_bizcard,"Business card added successfully"))
+
+@app.delete("/{id}", response_description="Business card deleted from the database")
+async def delete_bizcard_data(id: str):
+    coll = db['businesscards']
+    if len(id)!= 24:
+        return ErrorResponseModel(
+            "An error occurred", 404, "Business card with id {0} needs to be a 24 byte string".format(id)
+        )
+    bizcard = coll.find_one({"_id": ObjectId(id)})
+    if bizcard:
+        deleted_bizcard = coll.delete_one({"_id":ObjectId(id)})
+        if deleted_bizcard:
+            return ResponseModel(
+                "Business card with ID: {} removed".format(id), "Business card deleted successfully"
+            )
+    return ErrorResponseModel(
+        "An error occurred", 404, "Business card with id {0} doesn't exist".format(id)
+    )
 
 #Ok connect to our mongodb Atlas cluster
 db = mongo_cnt("openbanking", "businesscard")
