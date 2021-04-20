@@ -1,4 +1,6 @@
 from typing import Optional,List
+
+from bson import ObjectId
 from fastapi import FastAPI, Body
 from fastapi.encoders import jsonable_encoder
 import requests, json
@@ -65,6 +67,7 @@ class location_info (BaseModel):
     GeoLocation: geolocation
 
 class business_card(BaseModel):
+    id: str
     firstname: str
     lastname: str
     jobtitle: str
@@ -80,6 +83,8 @@ async def root():
 def businesscard(fname, lname):
     coll = db['businesscards']
     bcard_json = coll.find_one({"firstname":fname,"lastname":lname})
+    bcard_json["id"] = str(bcard_json["_id"])
+    print(bcard_json)
     return bcard_json
 
 @app.post("/", response_description="Business card added in to the database")
