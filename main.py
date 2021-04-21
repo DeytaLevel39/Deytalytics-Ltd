@@ -109,8 +109,6 @@ async def root():
 </head>
 <body>
 
-
-
 <div class="c-main">  
 <div class="o-container" style="background-repeat: no-repeat; background-size: cover; background-image: url('static/background-cover.png');">
   <div class="c-hero-grid row">
@@ -119,15 +117,16 @@ async def root():
       <table>
       <tr><td class = "c-txt--h4">Job Title:</td><td>Data Architect</td></tr>
       <tr><td class = "c-txt--h4">Mobile:</td><td>+447941252447</td></tr>
+      <tr><td class = "c-txt--h4">Email:</td><td>james_dey@hotmail.com</td></tr>
       <tr><td class = "c-txt--h4">Linkedin:</td><td><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
       <tr><td class = "c-txt--h4">Website:</td><td><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
       <tr><td class = "c-txt--h4">Github:</td><td><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
       <tr><td class = "c-txt--h4">REST API:</td><td><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey</a></td></tr>
       </table>
+    </div>
+  </div>
 </div>
 </div>
-</div>
-
 
 </body>
 </html>
