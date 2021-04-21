@@ -78,6 +78,8 @@ class business_card(BaseModel):
     jobtitle: str
     mobile: str
     linkedin: HttpUrl
+    github: HttpUrl
+    website: HttpUrl
     location: location_info
 
 class business_card_with_id(BaseModel):
@@ -87,6 +89,8 @@ class business_card_with_id(BaseModel):
     jobtitle: str
     mobile: str
     linkedin: HttpUrl
+    github: HttpUrl
+    website: HttpUrl
     location: location_info
 
 @app.get("/", response_class=HTMLResponse)
@@ -111,7 +115,7 @@ async def root():
 <div class="o-container" style="background-repeat: no-repeat; background-size: cover; background-image: url('static/background-cover.png');">
   <div class="c-hero-grid row">
     <div class="c-hero__grid__txt">
-      <h1 class="c-txt--h2" style="color:#fe911b;">JAMES DEY'S BUSINESS CARD</h1>
+      <h1 class="c-txt--h1" style="color:#fe911b;">JAMES DEY'S BUSINESS CARD</h1>
       <table>
       <tr><td class = "c-txt--h4">Job Title:</td><td>Data Architect</td></tr>
       <tr><td class = "c-txt--h4">Mobile:</td><td>+447941252447</td></tr>
