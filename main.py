@@ -103,6 +103,7 @@ async def root():
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.dtsquared.co.uk/wp-content/cache/autoptimize/css/autoptimize_5691c34ca4ff6ee715f4ada0c136a9f2.css">
+  <link rel="stylesheet" href="static/typewriter.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -113,7 +114,10 @@ async def root():
 <div class="o-container" style="background-repeat: no-repeat; background-size: cover; background-image: url('static/background-cover.png');">
   <div class="c-hero-grid row">
     <div class="c-hero__grid__txt">
-      <h1 class="c-txt--h2" style="color:#fe911b;">JAMES DEY'S BUSINESS CARD</h1>
+    <div class="typewriter">
+      <h2>&nbsp</h2>
+      <h1 class="c-txt--h3" style="color:#fe911b;">JAMES DEY'S BUSINESS CARD</h1></div>
+      <p>
       <table>
       <tr><td class = "c-txt--h4">Job Title:</td><td>Data Architect</td></tr>
       <tr><td class = "c-txt--h4">Mobile:</td><td>+447941252447</td></tr>
