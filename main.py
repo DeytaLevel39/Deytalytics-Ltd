@@ -9,9 +9,11 @@ from genson import SchemaBuilder
 import pymongo
 
 from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 def mongo_cnt(password, myFirstDatabase):
     mongo_cntstr = "mongodb+srv://admin:"+password+"@cluster0.jbbpl.mongodb.net/"+myFirstDatabase+"?retryWrites=true&w=majority"
@@ -106,7 +108,7 @@ async def root():
 
 
 <div class="c-main">  
-<div class="o-container">
+<div class="o-container" style="background-repeat: no-repeat; background-size: cover; background-image: url('static/background-cover.png');">
   <div class="c-hero-grid row">
     <div class="c-hero__grid__txt">
       <h1 class="c-txt--hero" style="color:#fe911b;">James Dey's Business Card</h1>
