@@ -8,6 +8,8 @@ from pydantic import BaseModel, HttpUrl, constr, confloat
 from genson import SchemaBuilder
 import pymongo
 
+from fastapi.responses import HTMLResponse
+
 
 app = FastAPI()
 
@@ -85,9 +87,48 @@ class business_card_with_id(BaseModel):
     linkedin: HttpUrl
     location: location_info
 
-@app.get("/", response_model=msg)
+@app.get("/", response_class=HTMLResponse)
 async def root():
-    return {"message": "Hey there, this isn't the business card. Try putting /businesscard at the end of your request URL"}
+    homepage = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Business Card</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.dtsquared.co.uk/wp-content/cache/autoptimize/css/autoptimize_5691c34ca4ff6ee715f4ada0c136a9f2.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+
+<div class="c-main">  
+<div class="o-container">
+  <div class="c-hero-grid row">
+    <div class="c-hero__grid__txt">
+      <h1 class="c-txt--hero" style="color:#fe911b;">James Dey's Business Card</h1>
+      <div class = "c-txt--h4">
+      <table>
+      <tr><td>Job Title:</td><td>Data Architect</td></tr>
+      <tr><td>Mobile:</td><td>+447941252447</td></tr>
+      <tr><td>Linkedin:</td><td><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
+      <tr><td>Website:</td><td><a href="https://deytaflask.herokuapp.com">https://www.deytalytics.com</a></td></tr>
+      <tr><td>Github:</td><td><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
+      <tr><td>REST API:</td><td><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytalytics.com/businesscard?fname=James&lname=Dey</a></td></tr>
+      </table>
+</div>
+</div>
+</div>
+
+
+</body>
+</html>
+"""
+
+    return homepage
 
 @app.get("/businesscard", response_model=business_card_with_id)
 def businesscard(fname, lname):
