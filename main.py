@@ -70,7 +70,7 @@ class location_info (BaseModel):
     city: str
     country: str
     ISOCountryCode: constr(max_length=3, min_length=3)
-    GeoLocation: geolocation
+    GeoLocation: Optional [geolocation] = None
 
 class business_card(BaseModel):
     firstname: str
@@ -78,8 +78,8 @@ class business_card(BaseModel):
     jobtitle: str
     mobile: str
     linkedin: HttpUrl
-    github: HttpUrl
-    website: HttpUrl
+    github: Optional [HttpUrl] = None
+    website: Optional [HttpUrl] = None
     location: location_info
 
 class business_card_with_id(BaseModel):
@@ -89,8 +89,8 @@ class business_card_with_id(BaseModel):
     jobtitle: str
     mobile: str
     linkedin: HttpUrl
-    github: HttpUrl
-    website: HttpUrl
+    github: Optional [HttpUrl] = None
+    website: Optional [HttpUrl] = None
     location: location_info
 
 @app.get("/", response_class=HTMLResponse)
