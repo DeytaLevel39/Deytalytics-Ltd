@@ -124,7 +124,7 @@ async def root():
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/material-rounded/2x/domain--v2.png"></td><td style="text-align: left;"><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/linkedin.png"></td><td style="text-align: left;"><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/github.png"></td><td style="text-align: left;"><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
-      <tr><td class = "c-txt--h4">REST API:</td><td style="text-align: left;"><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard</a></td></tr>
+      <tr><td class = "c-txt--h4">REST:</td><td style="text-align: left;"><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard</a></td></tr>
       </table>
     </div>
   </div>
