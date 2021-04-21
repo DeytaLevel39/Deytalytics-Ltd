@@ -116,16 +116,15 @@ async def root():
     <div class="c-hero__grid__txt">
     <div class="typewriter">
       <h2>&nbsp</h2>
-      <h1 class="c-txt--h3" style="color:#fe911b;">JAMES DEY'S BUSINESS CARD</h1></div>
-      <p>
+      <h1 class="c-txt--h3" style="color:#fe911b;">JAMES DEY</h1></div>
+      <h2 class="c-txt--h4">Data Architect</h2>
       <table>
-      <tr><td class = "c-txt--h4">Job Title:</td><td>Data Architect</td></tr>
-      <tr><td class = "c-txt--h4">Mobile:</td><td>+447941252447</td></tr>
-      <tr><td class = "c-txt--h4">Email:</td><td>james_dey@hotmail.com</td></tr>
-      <tr><td class = "c-txt--h4">Linkedin:</td><td><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
-      <tr><td class = "c-txt--h4">Website:</td><td><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
-      <tr><td class = "c-txt--h4">Github:</td><td><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
-      <tr><td class = "c-txt--h4">REST API:</td><td><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey</a></td></tr>
+      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/material-two-tone/2x/phone.png"></td><td style="text-align: left;">+447941252447</td></tr>
+      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/email-open.png"</td><td style="text-align: left;">james_dey@hotmail.com</td></tr>
+      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/material-rounded/2x/domain--v2.png"></td><td style="text-align: left;"><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
+      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/linkedin.png"></td><td style="text-align: left;"><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
+      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/github.png"></td><td style="text-align: left;"><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
+      <tr><td class = "c-txt--h4">REST API:</td><td style="text-align: left;"><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard</a></td></tr>
       </table>
     </div>
   </div>
