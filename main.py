@@ -110,14 +110,13 @@ async def root():
   <div class="c-hero-grid row">
     <div class="c-hero__grid__txt">
       <h1 class="c-txt--hero" style="color:#fe911b;">James Dey's Business Card</h1>
-      <div class = "c-txt--h4">
       <table>
-      <tr><td>Job Title:</td><td>Data Architect</td></tr>
-      <tr><td>Mobile:</td><td>+447941252447</td></tr>
-      <tr><td>Linkedin:</td><td><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
-      <tr><td>Website:</td><td><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
-      <tr><td>Github:</td><td><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
-      <tr><td>REST API:</td><td><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey</a></td></tr>
+      <tr><td class = "c-txt--h4">Job Title:</td><td>Data Architect</td></tr>
+      <tr><td class = "c-txt--h4">Mobile:</td><td>+447941252447</td></tr>
+      <tr><td class = "c-txt--h4">Linkedin:</td><td><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
+      <tr><td class = "c-txt--h4">Website:</td><td><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
+      <tr><td class = "c-txt--h4">Github:</td><td><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
+      <tr><td class = "c-txt--h4">REST API:</td><td><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey</a></td></tr>
       </table>
 </div>
 </div>
