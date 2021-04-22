@@ -114,17 +114,17 @@ async def root():
 <div class="o-container" style="background-repeat: no-repeat; background-size: cover; background-image: url('static/background-cover.png');">
   <div class="c-hero-grid row">
     <div class="c-hero__grid__txt">
-    <div class="typewriter">
+
       <h2>&nbsp</h2>
-      <h1 class="c-txt--h3" style="color:#fe911b;">JAMES DEY</h1></div>
+      <div class="typewriter"><h1 class="c-txt--h3" style="color:#fe911b;">JAMES DEY</h1></div>
       <h2 class="c-txt--h4">Data Architect</h2>
       <table>
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/003057/phone-squared.png"></td><td style="text-align: left;">+447941252447</td></tr>
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/material-outlined/2x/003057/email-open.png"</td><td style="text-align: left;">james_dey@hotmail.com</td></tr>
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/003057/web-globe.png"></td><td style="text-align: left;"><a href="https://deytaflask.herokuapp.com">https://deytaflask.herokuapp.com</a></td></tr>
-      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/material-outlined/2x/003057/linkedin.png"></td><td style="text-align: left;"><a href="https://www.linkedin.com/in/dataarchitectlondon">https://www.linkedin.com/in/dataarchitectlondon</a></td></tr>
+      <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/material-outlined/2x/003057/linkedin.png"></td><td style="text-align: left;"><a href="https://www.linkedin.com/in/dataarchitectuk">https://www.linkedin.com/in/dataarchitectuk</a></td></tr>
       <tr><td class = "c-txt--h4"><img src="https://img.icons8.com/fluent-systems-regular/2x/003057/github.png"></td><td style="text-align: left;"><a href="https://github.com/Deytalytics-JamesDey">https://github.com/Deytalytics-JamesDey</a></td></tr>
-      <tr><td class = "c-txt--h4" style="color:#003057;">REST:</td><td style="text-align: left;"><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">https://deytabizcard.herokuapp.com/businesscard</a></td></tr>
+      <tr><td class = "c-txt--h4" style="color:#003057;">REST:</td><td style="text-align: left;"><a href="https://deytabizcard.herokuapp.com/businesscard?fname=James&lname=Dey">business card (JSON)</a></td></tr>
       </table>
     </div>
   </div>
