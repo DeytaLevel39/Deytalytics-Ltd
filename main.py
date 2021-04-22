@@ -77,6 +77,7 @@ class business_card(BaseModel):
     lastname: str
     jobtitle: str
     mobile: str
+    email: str
     linkedin: HttpUrl
     github: Optional [HttpUrl] = None
     website: Optional [HttpUrl] = None
@@ -88,6 +89,7 @@ class business_card_with_id(BaseModel):
     lastname: str
     jobtitle: str
     mobile: str
+    email: str
     linkedin: HttpUrl
     github: Optional [HttpUrl] = None
     website: Optional [HttpUrl] = None
