@@ -3,10 +3,14 @@
   border-right: .15em solid orange; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
+  letter-spacing: .2em; /* Adjust as needed */
   animation:
-    typing 3.5s steps(40, end),
+    typing 3.5s steps(9, end),
     blink-caret .75s step-end infinite;
+}
+
+.typewriter {
+    display: inline-flex;
 }
 
 /* The typing effect */
